@@ -1,0 +1,10 @@
+{
+  "framework": "vite",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter @workspace/elysium-ecosystem-hub run build",
+  "outputDirectory": "artifacts/elysium-ecosystem-hub/dist/public",
+  "env": {
+    "PORT": "3000",
+    "BASE_PATH": "/"
+  }
+}

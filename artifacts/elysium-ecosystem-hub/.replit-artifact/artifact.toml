@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Elysium Ecosystem Hub"
+description = "A polished, responsive directory for discovering projects across the Elysium Testnet ecosystem, with category filtering and direct links to each app."
+version = "1.0.0"
+id = "artifacts/elysium-ecosystem-hub"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20924
+
+[services.development]
+run = "pnpm --filter @workspace/elysium-ecosystem-hub run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/elysium-ecosystem-hub", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/elysium-ecosystem-hub/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20924"
+BASE_PATH = "/"
