@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {
   ArrowDownRight,
   ArrowUpRight,
+  AtSign,
   Blocks,
   BookOpen,
   ChevronRight,
@@ -33,6 +34,7 @@ type Project = {
   category: string;
   description: string;
   link: string;
+  twitter?: string;
 };
 
 // MAINTAINER NOTE: This is the single source of truth for the directory.
@@ -103,6 +105,21 @@ export const PROJECTS: Project[] = [
     category: 'Other',
     description: 'Community-first project coming soon on Elysium.',
     link: 'https://x.com/MontraXYZ',
+  },
+  {
+    name: 'Hyperion',
+    category: 'Game',
+    description:
+      'An isometric cyberpunk RPG where every Vault run is a real challenge. Defeat the god that guards it, secure the loot, and extract before you lose it all.',
+    link: 'https://www.hyperionrpg.xyz/',
+    twitter: 'https://x.com/Hyperion_RPG',
+  },
+  {
+    name: 'Atlashl',
+    category: 'NFT',
+    description: 'Building an NFT marketplace on Elysium.',
+    link: 'https://elysium.atlashl.xyz/',
+    twitter: 'https://x.com/AtlasHL',
   },
 ];
 
@@ -234,15 +251,28 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
         <h3 className="text-[1.35rem] font-medium tracking-[-0.03em] text-foreground">{project.name}</h3>
         <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">{project.description}</p>
-        <ExternalAnchor
-          href={project.link}
-          testId={`link-open-${projectId}`}
-          ariaLabel={`Open ${project.name}`}
-          className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-primary"
-        >
-          Open app
-          <ArrowUpRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </ExternalAnchor>
+        <div className="mt-5 flex flex-wrap items-center gap-4">
+          <ExternalAnchor
+            href={project.link}
+            testId={`link-open-${projectId}`}
+            ariaLabel={`Open ${project.name}`}
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-primary"
+          >
+            Open app
+            <ArrowUpRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </ExternalAnchor>
+          {project.twitter && (
+            <ExternalAnchor
+              href={project.twitter}
+              testId={`link-twitter-${projectId}`}
+              ariaLabel={`Open ${project.name} on X`}
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <AtSign size={14} />
+              X
+            </ExternalAnchor>
+          )}
+        </div>
       </div>
     </article>
   );
