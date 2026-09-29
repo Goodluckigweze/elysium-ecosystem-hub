@@ -121,6 +121,27 @@ export const PROJECTS: Project[] = [
     link: 'https://elysium.atlashl.xyz/',
     twitter: 'https://x.com/AtlasHL',
   },
+  {
+    name: 'Ellytradebot',
+    category: 'Tools / Analytics',
+    description: 'Telegram trading bot.',
+    link: 'https://t.me/ellytrade_bot',
+    twitter: 'https://x.com/Ellytradebot',
+  },
+  {
+    name: 'Temporal Finance',
+    category: 'DeFi',
+    description: 'Hedge perps against liquidation and trade perpified options on any asset.',
+    link: 'https://perp-options-rfq-production.up.railway.app',
+    twitter: 'https://x.com/temporalfinance?s=11',
+  },
+  {
+    name: 'Frog Flip',
+    category: 'Game',
+    description: 'A provably fair coin flip on Elysium testnet.',
+    link: 'https://frog-flip.vercel.app/',
+    twitter: 'https://x.com/KhattaDahi',
+  },
 ];
 
 // The complete filter set is intentionally explicit for quick community maintenance.
