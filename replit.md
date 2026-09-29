@@ -30,7 +30,7 @@ _Populate as you build — non-obvious choices a reader couldn't infer from the 
 
 ## Product
 
-- Browse 13 pre-loaded Elysium Testnet projects.
+- Browse 16 pre-loaded Elysium Testnet projects.
 - Filter projects by the requested ecosystem categories.
 - Search by project name, category, or description.
 - Open project links and submit new projects through the Google Form.
